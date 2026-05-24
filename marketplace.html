@@ -55,5 +55,19 @@
 </div>
 
 <script src="js/markplace.js"></script>
+<script>
+// Logout function for all pages
+const logoutBtn = document.getElementById("logout-btn");
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", () => {
+            // Remove login info from localStorage
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("userEmail");
+            // Redirect to login page
+            window.location.href = "login.html";
+            });
+    };
+</script>
+
 </body>
 </html>
