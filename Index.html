@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EggLink Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo-area">
+    <img src="assets/logo.png" alt="EggLink Logo" class="logo-img">
+    <h1 style="color: black;">EggLink</h1>
+  </div>
+
+  <a class="active" href="index.html">Dashboard</a>
+  <a href="listings.html">Listings</a>
+  <a href="marketplace.html">Marketplace</a>
+  <a href="messages.html">Messages <span id="msg-count">0</span></a>
+  <a href="orders.html">Orders <span id="order-count">0</span></a>
+  <a href="notifications.html">Notifications <span id="notif-count">0</span></a>
+  <a href="#">Settings</a>
+  <a href="#" id="logout-btn" class="logout-btn">Logout</a>
+</div>
+
+<div class="main">
+  <h1>Dashboard</h1>
+  <p>Welcome back! Here's what's happening</p>
+
+  <div class="dashboard-cards">
+    <div class="card" id="total-listings">
+      <h2>0</h2>
+      <p>Total Listings</p>
+      <p id="listing-change">+0 this week</p>
+    </div>
+    <div class="card" id="active-orders">
+      <h2>0</h2>
+      <p>Active Orders</p>
+      <p id="orders-pending">0 pending</p>
+    </div>
+    <div class="card" id="total-revenue">
+      <h2>$0</h2>
+      <p>Total Revenue</p>
+      <p id="revenue-change">+0% from last month</p>
+    </div>
+    <div class="card" id="total-views">
+      <h2>0</h2>
+      <p>Total Views</p>
+      <p id="views-change">+0% this week</p>
+    </div>
+  </div>
+
+  <div class="quick-actions">
+    <div class="quick-action" onclick="alert('Creating new listing...')">New Listing</div>
+    <div class="quick-action" onclick="alert('Browsing marketplace...')">Browse Market</div>
+    <div class="quick-action" id="messages-btn">Messages</div>
+    <div class="quick-action" onclick="alert('Viewing orders...')">View Orders</div>
+  </div>
+
+  <div class="recent-activity">
+    <h3>Recent Activity</h3>
+    <div id="activity-feed"></div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #faf7f2;
+  color: #3a3a3a;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background-color: #a38663;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 9px 0px 10px -5px rgba(0,0,0,0.5);
+}
+.sidebar h1 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+.sidebar a.active, .sidebar a:hover {
+  background-color: #8f704f;
+}
+.main {
+  margin-left: 240px;
+  padding: 20px;
+}
+.dashboard-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  background-color: #fff8f0;
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.card:hover {
+  background-color: #f0e8dc;
+}
+.card h2 {
+  margin: 0;
+  font-size: 24px;
+}
+.card p {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  color: #555;
+}
+.quick-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+.quick-action {
+  background-color: #f5f0e8;
+  padding: 15px 20px;
+  border-radius: 10px;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.quick-action:hover {
+  background-color: #e0d7c2;
+}
+.recent-activity {
+  margin-top: 40px;
+}
+.activity-item {
+  background-color: #fff8f0;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.status {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background-color: #ffe8b0;
+}
+#messages-dropdown {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  top: 40px;
+  right: 20px;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+
+/* Style logout like other links */
+.logout-btn {
+  display: block;
+  color: #e11d48; /* red for logout */
+  font-weight: 600;
+  padding: 14px 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #fff1f2;
+}
+
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* ensures logout stays at bottom */
+  box-shadow: 9px 0px 10px -5px rgba(0,0,0,0.5);
+}
+.sidebar a {
+    color: black;
+}
+
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center logo and title horizontally */
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.logo-img {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.sidebar-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  transition: 0.2s;
+}
+
+.sidebar-links a.active,
+.sidebar-links a:hover {
+  background-color: #8f704f;
+  color: #fff;
+}
+
+.sidebar-bottom {
+  padding-bottom: 20px;
+}
+
+.logout-btn {
+  display: block;
+  color: #e11d48;
+  font-weight: 600;
+  padding: 14px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.logout-btn:hover {
+  background-color: #fff1f2;
+  color: #e11d48;
+}
