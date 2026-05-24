@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EggLink Messages</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="logo-area">
+    <img src="assets/logo.png" alt="EggLink Logo" class="logo-img">
+    <h1 style="color: black;">EggLink</h1>
+  </div>
+
+  <a href="index.html">Dashboard</a>
+  <a href="listings.html">Listings</a>
+  <a href="marketplace.html">Marketplace</a>
+  <a class="active" href="messages.html">Messages <span id="msg-count">3</span></a>
+  <a href="orders.html">Orders</a>
+  <a href="notifications.html">Notifications</a>
+  <a href="settings.html">Settings</a>
+
+  <div class="sidebar-bottom">
+    <a href="#" id="logout-btn" class="logout-btn">Logout</a>
+  </div>
+</div>
+
+<!-- Main content -->
+<div class="main">
+  <h1>Messages</h1>
+  <p>View your inbox and conversations</p>
+
+  <div class="messages-page" style="display:flex; gap:20px;">
+
+    <!-- Inbox list -->
+    <div class="inbox-list" style="flex:1; max-width:300px;">
+      <h3>Inbox</h3>
+      <div class="inbox-item" onclick="openConversation('Fresh Foods Co.')">
+        <strong>Fresh Foods Co.</strong>
+        <p>Inquiry about bulk pricing</p>
+        <span style="font-size:12px;color:#555;">1 hour ago</span>
+      </div>
+      <div class="inbox-item" onclick="openConversation('Valley Mart')">
+        <strong>Valley Mart</strong>
+        <p>Order confirmation</p>
+        <span style="font-size:12px;color:#555;">2 hours ago</span>
+      </div>
+      <div class="inbox-item" onclick="openConversation('Farm Supplies Inc.')">
+        <strong>Farm Supplies Inc.</strong>
+        <p>Request for new catalog</p>
+        <span style="font-size:12px;color:#555;">3 hours ago</span>
+      </div>
+    </div>
+
+    <!-- Conversation area -->
+    <div class="conversation" style="flex:2; background:#fffdf9; border:1px solid #eee8dd; border-radius:12px; padding:20px;">
+      <h3 id="conversation-title">Select a conversation</h3>
+      <div id="messages-container" style="height:400px; overflow-y:auto; margin-top:10px;">
+        <p style="color:#555;">Your messages will appear here.</p>
+      </div>
+
+      <div style="margin-top:10px; display:flex; gap:10px;">
+        <input type="text" id="messageInput" placeholder="Type a message..." style="flex:1; padding:10px; border-radius:12px; border:1px solid #ddd;">
+        <button onclick="sendMessage()" style="padding:10px 16px; border-radius:12px; border:none; background-color:#8f704f; color:white; cursor:pointer;">Send</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// Demo message system
+let currentRecipient = null;
+
+function openConversation(name) {
+  currentRecipient = name;
+  document.getElementById('conversation-title').textContent = name;
+  const container = document.getElementById('messages-container');
+  container.innerHTML = `
+    <p><strong>${name}:</strong> Hello, I need your latest egg prices.</p>
+    <p><strong>You:</strong> Sure! Here’s our price list.</p>
+  `;
+}
+
+function sendMessage() {
+  if (!currentRecipient) {
+    alert('Select a conversation first.');
+    return;
+  }
+  const input = document.getElementById('messageInput');
+  if (input.value.trim() === '') return;
+  const container = document.getElementById('messages-container');
+  const p = document.createElement('p');
+  p.innerHTML = `<strong>You:</strong> ${input.value}`;
+  container.appendChild(p);
+  container.scrollTop = container.scrollHeight;
+  input.value = '';
+}
+</script>
+</body>
+</html>

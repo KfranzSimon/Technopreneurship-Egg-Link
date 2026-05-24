@@ -3,36 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EggLink - Listings</title>
-<link rel="stylesheet" href="css/style.css">
+<title>EggLink Marketplace</title>
+<link rel="stylesheet" href="css/marketplace.css">
 </head>
 <body>
+<!-- Sidebar (same as dashboard) -->
 <div class="sidebar">
   <div class="logo-area">
     <img src="assets/logo.png" alt="EggLink Logo" class="logo-img">
-    <h1 style="color: black;">EggLink</h1>
+    <h1>EggLink</h1>
   </div>
 
-  <a class="active" href="index.html">Dashboard</a>
+  <a href="index.html">Dashboard</a>
   <a href="listings.html">Listings</a>
-  <a href="marketplace.html">Marketplace</a>
+  <a class="active" href="marketplace.html">Marketplace</a>
   <a href="messages.html">Messages <span id="msg-count">0</span></a>
   <a href="orders.html">Orders <span id="order-count">0</span></a>
   <a href="notifications.html">Notifications <span id="notif-count">0</span></a>
-  <a href="#">Settings</a>
-  <a href="#" id="logout-btn" class="logout-btn">Logout</a>
-</div>
-<div class="sidebar-bottom">
+  <a href="settings.html">Settings</a>
+
+  <div class="sidebar-bottom">
     <a href="#" id="logout-btn" class="logout-btn">Logout</a>
-  </div>
-<div class="main">
-  <h1>Marketplace</h1>
-  <p>Here are all the available products shown.</p>
-  <div id="listings-container">
-    <!-- JS can populate listings dynamically -->
   </div>
 </div>
 
-<script src="js/app.js"></script>
+<!-- Main content -->
+<div class="main">
+  <h1>Marketplace</h1>
+  <p>Browse and connect with egg suppliers</p>
+
+  <div class="market-search">
+    <input type="text" id="searchInput" placeholder="Search by supplier, egg type, or location...">
+    <select id="sortSelect">
+      <option value="nearest">Nearest First</option>
+      <option value="highest">Highest Rating</option>
+    </select>
+  </div>
+
+  <div class="market-filters">
+    <button class="type-filter" data-type="all">All Types</button>
+    <button class="type-filter" data-type="organic">Organic</button>
+    <button class="type-filter" data-type="free-range">Free Range</button>
+    <button class="type-filter" data-type="cage-free">Cage-Free</button>
+    <button class="type-filter" data-type="white">White</button>
+    <button class="type-filter" data-type="brown">Brown</button>
+  </div>
+
+  <div id="suppliersContainer" class="suppliers-container">
+    <!-- JS will populate supplier cards -->
+  </div>
+</div>
+
+<script src="js/markplace.js"></script>
 </body>
 </html>

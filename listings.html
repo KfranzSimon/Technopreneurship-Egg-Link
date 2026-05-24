@@ -3,34 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EggLink - Listings</title>
+<title>EggLink Listings</title>
 <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <div class="sidebar">
   <div class="logo-area">
     <img src="assets/logo.png" alt="EggLink Logo" class="logo-img">
     <h1 style="color: black;">EggLink</h1>
   </div>
 
-  <a class="active" href="index.html">Dashboard</a>
-  <a href="listings.html">Listings</a>
+  <a href="Index.html">Dashboard</a>
+  <a class="active" href="listings.html">Listings</a>
   <a href="marketplace.html">Marketplace</a>
   <a href="messages.html">Messages <span id="msg-count">0</span></a>
   <a href="orders.html">Orders <span id="order-count">0</span></a>
   <a href="notifications.html">Notifications <span id="notif-count">0</span></a>
-  <a href="#">Settings</a>
+  <a href="settings.html">Settings</a>
   <a href="#" id="logout-btn" class="logout-btn">Logout</a>
 </div>
-<div class="sidebar-bottom">
-    <a href="#" id="logout-btn" class="logout-btn">Logout</a>
+
+<div class="main listings-page">
+
+  <div class="page-header">
+    <div>
+      <h1>My Listings</h1>
+      <p>Manage your egg supply listings</p>
+    </div>
+
+    <button class="create-listing-btn" id="create-listing-btn">
+      <span>+</span> Create Listing
+    </button>
   </div>
-<div class="main">
-  <h1>Listings</h1>
-  <p>Here are all your product listings.</p>
-  <div id="listings-container">
-    <!-- JS can populate listings dynamically -->
+
+  <div class="listing-stats">
+    <div class="listing-stat-card">
+      <p>Active Listings</p>
+      <h2>2</h2>
+    </div>
+
+    <div class="listing-stat-card">
+      <p>Total Views</p>
+      <h2>371</h2>
+    </div>
+
+    <div class="listing-stat-card">
+      <p>Total Orders</p>
+      <h2>28</h2>
+    </div>
+
+    <div class="listing-stat-card">
+      <p>Total Revenue</p>
+      <h2>$1,324.50</h2>
+    </div>
   </div>
+
+  <div class="listing-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="active">Active</button>
+    <button class="filter-btn" data-filter="paused">Paused</button>
+    <button class="filter-btn" data-filter="out">Out of Stock</button>
+  </div>
+
+  <div class="listing-table-card">
+    <table class="listing-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Status</th>
+          <th>Performance</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr data-status="active">
+          <td>
+            <div class="product-info">
+              <div class="egg-img egg-white"></div>
+              <div>
+                <h3>Grade A White Eggs</h3>
+                <p>ID: #1</p>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <h3>$4.50</h3>
+            <p>per tray</p>
+          </td>
+
+          <td>
+            <h3>250 trays</h3>
+          </td>
+
+          <td>
+            <span class="status-pill active-status">● active</span>
+          </td>
+
+          <td>
+            <p>👁 143 views</p>
+            <p>↗ $360 revenue</p>
+          </td>
+
+          <td>
+            <div class="table-actions">
+              <button title="Edit">✎</button>
+              <button title="Pause">⏻</button>
+              <button class="delete-action" title="Delete">🗑</button>
+            </div>
+          </td>
+        </tr>
+
+        <tr data-status="active">
+          <td>
+            <div class="product-info">
+              <div class="egg-img egg-brown"></div>
+              <div>
+                <h3>Organic Brown Eggs</h3>
+                <p>ID: #2</p>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <h3>$5.25</h3>
+            <p>per tray</p>
+          </td>
+
+          <td>
+            <h3>180 trays</h3>
+          </td>
+
+          <td>
+            <span class="status-pill active-status">● active</span>
+          </td>
+
+          <td>
+            <p>👁 98 views</p>
+            <p>↗ $262.5 revenue</p>
+          </td>
+
+          <td>
+            <div class="table-actions">
+              <button title="Edit">✎</button>
+              <button title="Pause">⏻</button>
+              <button class="delete-action" title="Delete">🗑</button>
+            </div>
+          </td>
+        </tr>
+
+        <tr data-status="paused">
+          <td>
+            <div class="product-info">
+              <div class="egg-img egg-duck"></div>
+              <div>
+                <h3>Duck Eggs</h3>
+                <p>ID: #3</p>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <h3>$6.00</h3>
+            <p>per tray</p>
+          </td>
+
+          <td>
+            <h3>75 trays</h3>
+          </td>
+
+          <td>
+            <span class="status-pill paused-status">● paused</span>
+          </td>
+
+          <td>
+            <p>👁 76 views</p>
+            <p>↗ $180 revenue</p>
+          </td>
+
+          <td>
+            <div class="table-actions">
+              <button title="Edit">✎</button>
+              <button title="Resume">⏻</button>
+              <button class="delete-action" title="Delete">🗑</button>
+            </div>
+          </td>
+        </tr>
+
+        <tr data-status="out">
+          <td>
+            <div class="product-info">
+              <div class="egg-img egg-small"></div>
+              <div>
+                <h3>Small Farm Eggs</h3>
+                <p>ID: #4</p>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <h3>$3.75</h3>
+            <p>per tray</p>
+          </td>
+
+          <td>
+            <h3>0 trays</h3>
+          </td>
+
+          <td>
+            <span class="status-pill out-status">● out of stock</span>
+          </td>
+
+          <td>
+            <p>👁 54 views</p>
+            <p>↗ $120 revenue</p>
+          </td>
+
+          <td>
+            <div class="table-actions">
+              <button title="Edit">✎</button>
+              <button title="Pause">⏻</button>
+              <button class="delete-action" title="Delete">🗑</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>
 
 <script src="js/app.js"></script>
