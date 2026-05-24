@@ -1,3 +1,31 @@
+<?php 
+session_start();
+include 'php/connection.php';
+
+  $error = '';
+
+  if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $email = $_POST['Email'];
+    $password = $_POST['Pass'];
+
+    if($email != '' && $password != ''){
+      $sql = "SELECT * FROM users Where email='$email' AND password='$password'";
+      $result = mysqli_query($conn, $sql);
+
+      if(mysqli_num_rows($result) == 1){
+      $row = mysqli_fetch_assoc($result);
+      $_SESSION['user_id'] = $row['id'];
+      $_SESSION['user_name'] = $row['full_name'];
+      header("Location: index.php");
+      exit;
+      }else{
+        $error = "error email or password";
+      }
+    }
+  }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +44,14 @@
     </div>
     <h2>Welcome to EggLink</h2>
     <p>Sign in to your account</p>
-
-    <form id="login-form">
+    <?php if($error){ echo "<p style ='color: red;'>$error</p>";}?>
+    <form id="login-form" method ="post">
+      
       <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter your email" required>
+      <input type="email" id="email" name="Email" placeholder="Enter your email" required>
 
       <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter your password" required>
+      <input type="password" id="password" name="Pass" placeholder="Enter your password" required>
 
       <div class="login-options">
         <label><input type="checkbox" id="remember"> Remember me</label>
@@ -35,6 +64,5 @@
   </div>
 </div>
 
-<script src="js/login.js"></script>
 </body>
 </html>

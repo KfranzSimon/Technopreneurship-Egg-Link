@@ -14,13 +14,13 @@
     <h1>EggLink</h1>
   </div>
 
-  <a href="index.html">Dashboard</a>
-  <a href="listings.html">Listings</a>
-  <a class="active" href="marketplace.html">Marketplace</a>
-  <a href="messages.html">Messages <span id="msg-count">0</span></a>
-  <a href="orders.html">Orders <span id="order-count">0</span></a>
-  <a href="notifications.html">Notifications <span id="notif-count">0</span></a>
-  <a href="settings.html">Settings</a>
+  <a href="index.php">Dashboard</a>
+  <a href="listings.php">Listings</a>
+  <a class="active" href="marketplace.php">Marketplace</a>
+  <a href="messages.php">Messages <span id="msg-count">0</span></a>
+  <a href="orders.php">Orders <span id="order-count">0</span></a>
+  <a href="notifications.php">Notifications <span id="notif-count">0</span></a>
+  <a href="settings.php">Settings</a>
 
   <div class="sidebar-bottom">
     <a href="#" id="logout-btn" class="logout-btn">Logout</a>
@@ -64,7 +64,7 @@ const logoutBtn = document.getElementById("logout-btn");
             localStorage.removeItem("isLoggedIn");
             localStorage.removeItem("userEmail");
             // Redirect to login page
-            window.location.href = "login.html";
+            window.location.href = "login.php";
             });
     };
 </script>

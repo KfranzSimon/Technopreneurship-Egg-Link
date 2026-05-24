@@ -15,13 +15,13 @@
     <h1 style="color: black;">EggLink</h1>
   </div>
 
-  <a class="active" href="index.html">Dashboard</a>
-  <a href="listings.html">Listings</a>
-  <a href="marketplace.html">Marketplace</a>
-  <a href="messages.html">Messages <span id="msg-count">0</span></a>
-  <a href="orders.html">Orders <span id="order-count">0</span></a>
-  <a href="notifications.html">Notifications <span id="notif-count">0</span></a>
-  <a href="settings.html">Settings</a>
+  <a class="active" href="index.php">Dashboard</a>
+  <a href="listings.php">Listings</a>
+  <a href="marketplace.php">Marketplace</a>
+  <a href="messages.php">Messages <span id="msg-count">0</span></a>
+  <a href="orders.php">Orders <span id="order-count">0</span></a>
+  <a href="notifications.php">Notifications <span id="notif-count">0</span></a>
+  <a href="settings.php">Settings</a>
   <a href="#" id="logout-btn" class="logout-btn">Logout</a>
 </div>
 
@@ -53,10 +53,10 @@
   </div>
 
   <div class="quick-actions">
-    <div class="quick-action" onclick="window.location.href='listings.html'">New Listings</div>
-    <div class="quick-action" onclick="window.location.href='marketplace.html'"">Browse Market</div>
-    <div class="quick-action" onclick="window.location.href='messages.html'">Messages</div>
-    <div class="quick-action" onclick="window.location.href='orders.html'">View Orders</div>
+    <div class="quick-action" onclick="window.location.href='listings.php'">New Listings</div>
+    <div class="quick-action" onclick="window.location.href='marketplace.php'"">Browse Market</div>
+    <div class="quick-action" onclick="window.location.href='messages.php'">Messages</div>
+    <div class="quick-action" onclick="window.location.href='orders.php'">View Orders</div>
   </div>
 
   <div class="recent-activity">
